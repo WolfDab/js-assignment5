@@ -28,16 +28,22 @@ or you can run all by running `node run-all`.
 
 const { test } = require('../tester')
 
-const items = [
-	  [ 'firstName', 'Luke' ],
-	  [ 'lastName', 'Skywalker' ],
-	  [ 'age', 19 ],
-	  [ 'occupation', 'Jedi' ],
-	  [ 'homePlanet', 'Tatooine' ]
-]
+let items = [
+    [ 'firstName', 'Luke' ],
+    [ 'lastName', 'Skywalker' ],
+    [ 'age', 19 ],
+    [ 'occupation', 'Jedi' ],
+    [ 'homePlanet', 'Tatooine' ]
+];
 
-// Omit the 'age' element
+let person = {};
 
-const person = items // append your code here
+for (let item of items) {
+    if (item[0] !== 'age') {
+        person[item[0]] = item[1];
+    }
+}
 
-test("Problem 4", person)
+console.log(person);
+
+test("Problem 4", person); // append your code here

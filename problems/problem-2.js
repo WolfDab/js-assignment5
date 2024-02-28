@@ -49,6 +49,22 @@ const strings = [
 	'"firstName":"Mace","lastName":"Windu","age":53,"occupation":"Jedi","homePlanet":"Haruun Kal"'
 ]
 
-const jedi = strings // append your code here
+const jedi = []
+
+for (const s of strings) {
+	const pairs = s.split(',')
+	const jediObj = {}
+	for (const pair of pairs) {
+		const [key, value] = pair.split(':')
+		const cleanKey = key.replace(/"/g, '').trim()
+		const cleanValue = value.replace(/"/g, '').trim()
+		jediObj[cleanKey] = cleanValue
+	}
+	if (jediObj.occupation === 'Jedi') {
+		jedi.push(jediObj)
+	}
+}
+
+console.log(jedi) // append your code here
 
 test("Problem 2", jedi)
