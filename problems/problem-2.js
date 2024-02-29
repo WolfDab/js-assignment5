@@ -39,8 +39,6 @@ You can run this example by running `node problems/problem-2` in your terminal,
 or you can run all by running `node run-all`.
 */
 
-const { test } = require('../tester')
-
 const strings = [
 	'"firstName":"Padme","lastName":"Amidala","age":27,"occupation":"Senator","homePlanet":"Naboo"',
 	'"firstName":"Yoda","lastName":"null","age":900,"occupation":"Jedi","homePlanet":"null"',
@@ -65,6 +63,4 @@ for (const s of strings) {
 	}
 }
 
-console.log(jedi) // append your code here
-
-test("Problem 2", jedi)
+console.log(jedi)
